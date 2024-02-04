@@ -2,7 +2,7 @@
 
 Chrome [recently indicated](https://github.com/privacycg/storage-access/pull/165) that it will implement and support the [Storage Access API](https://github.com/privacycg/storage-access). This means that Chrome will implement all the behaviors and APIs listed in the [specification](https://privacycg.github.io/storage-access/), and will additionally have its own user-agent-specific behaviors (the same way that Safari and Firefox [currently do](https://developer.mozilla.org/en-US/docs/Web/API/Storage_Access_API#safari_implementation_differences)). The below is a description of Chrome's plans for its implementation-defined behavior; these plans may evolve over time.
 
-This document includes [instructions](#testing-instructions) for how to test these semantics locally, in order to evaluate whether they'll work for you use case.
+This document includes [instructions](#testing-instructions) for how to test these semantics locally, in order to evaluate whether they'll work for your use case.
 
 ## Announcements
 
@@ -68,7 +68,7 @@ When such requirements are satisfied and an embedded third-party requests storag
 * If the user denies the request, Chrome will store the denial, setting the lifetime as described above. During the lifetime of a permission denial, the user will not be prompted for subsequent access requests that match the scope of the denial.
 * If the user dismisses the request, Chrome will not store any decision, and will not grant the permission. The embedded site can continue to request permission, and those requests may create prompts in the future.
 
-In Chrome's settings, users will be able to view a list of previously granted and denied permissions, and be able to revoke past decisions. This feature will provide users with transparency and control, and it will also allow developers to test the API with expected user behaviors on their local machine.
+In Chrome's settings, users will be able to view a list of previously granted and denied permissions, and be able to revoke past decisions. This feature will provide users with transparency and control, and it will also allow developers to test the API with expected user behaviors on their local machine. (As of Chrome 117, this UI is available at `chrome://settings/content/storageAccess`.)
 
 When Chrome ships the Storage Access API to address a broader suite of use cases, we anticipate learnings that will inform how to best communicate to users about the permission being requested. We are committed to delivering a meaningful user experience that balances privacy and frictionless browsing.
 
